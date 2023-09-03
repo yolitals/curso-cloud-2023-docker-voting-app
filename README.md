@@ -4,7 +4,7 @@
 
 ![Architecture diagram](architecture.excalidraw.png)
 
-* front-end applicación web en [Python](/vote) que te permite votar entre dos opciones
+* front-end web app en [Python](/vote) que te permite votar entre dos opciones
 * [Redis](https://hub.docker.com/_/redis/) que recolecta nuevos votos
 * [.NET](/worker/) worker que consume votos y los almacena en…
 * [Postgres](https://hub.docker.com/_/postgres/) que persiste los datos
