@@ -16,5 +16,17 @@ La aplicación de votación sólo acepta un voto por navegador del cliente. No r
 
 ## Ejercicio
 
+### Parte 1
+
+* Basado en el diagrama de arquitectura, crear un docker compose para orquestar la aplicación con todos los servicios mencionados, tomar en cuenta las siguientes consideraciones:
+  
+  * Para redis utilizar una imagen publica (redis:alpine)
+  * Para mysql utilizar una imagen publica (postgres:15-alpine)
+  * La aplicación de python dentro del contenedor se ejecuta en el puerto 80.
+  * La aplicación de node dentro del contenedor se ejecuta en el purto 80.
+  * La aplicación para votar y la que muestra los resultados deben exponerse.
+
+### Parte 2
+
 * Crear dos redes, una para frontend y otra para backend. Asignar estas redes según corresponda a cada servicio para garantizar la correcta comunicación entre todos los servicios y evitar accesos innecesarios.
 * Persisitir los datos o archivos que sean necesarios para preservar el conteo de votos.

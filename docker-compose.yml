@@ -12,7 +12,6 @@ services:
       - db
     ports:
       - "5001:80"
-      - "5858:5858"
 
   worker:
     build:
@@ -29,29 +28,3 @@ services:
     environment:
       POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "postgres"
-    # volumes:
-    #   - "db-data:/var/lib/postgresql/data"
-    #   - "./healthchecks:/healthchecks"
-    # healthcheck:
-    #   test: /healthchecks/postgres.sh
-    #   interval: "5s"
-
-  # this service runs once to seed the database with votes
-  # it won't run unless you specify the "seed" profile
-  # docker compose --profile seed up -d
-#   seed:
-#     build: ./seed-data
-#     profiles: ["seed"]
-#     depends_on:
-#       vote:
-#         condition: service_healthy 
-#     networks:
-#       - front-tier
-#     restart: "no"
-
-# volumes:
-#   db-data:
-
-# networks:
-#   front-tier:
-#   back-tier:
