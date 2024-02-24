@@ -16,9 +16,16 @@ La aplicación de votación sólo acepta un voto por navegador del cliente. No r
 
 ## Workshop parte 1
 
-### Construir imagen result
+### Autenticarse a Docker hub
 
 * Autenticarse a Docker hub, importante recordar cual es el id de usuario.
+
+```sh
+sudo docker login
+```
+
+### Construir imagen result
+
 * Revisar y comprender todas las instrucciones del archivo [Dockerfile](result/Dockerfile)
 * Construir la imagen para la aplicación *result*.
 
@@ -35,7 +42,6 @@ La aplicación de votación sólo acepta un voto por navegador del cliente. No r
 
 ### Construir imagen vote
 
-* Autenticarse a Docker hub, importante recordar cual es el id de usuario.
 * Revisar y comprender todas las instrucciones del archivo [Dockerfile](vote/Dockerfile)
 * Construir la imagen para la aplicación *vote*.
 
@@ -52,7 +58,6 @@ La aplicación de votación sólo acepta un voto por navegador del cliente. No r
 
 ### Construir imagen worker
 
-* Autenticarse a Docker hub, importante recordar cual es el id de usuario.
 * Revisar y comprender todas las instrucciones del archivo [Dockerfile](worker/Dockerfile)
 * Construir la imagen para la aplicación *worker*.
 
