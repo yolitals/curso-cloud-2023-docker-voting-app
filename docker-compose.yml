@@ -1,0 +1,48 @@
+services:
+  vote:
+    # Utilizar la opción "build" construye la aplicación
+    # definida en el archivo dockerfile dentro de la carpeta "vote"
+    build: ./vote
+    depends_on:
+      - redis
+    healthcheck: 
+      test: ["CMD", "curl", "-f", "http://localhost"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    ports:
+      - "80"
+    deploy:
+      replicas: 3
+    
+  result:
+    image: yolix/vote-app-result
+    depends_on:
+      - db
+    ports:
+      - "5001:80"
+
+  worker:
+    image: yolix/vote-app-worker
+    depends_on:
+      - redis
+      - db
+
+  redis:
+    image: redis:alpine
+
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+  
+  seed:
+    build: ./seed-data
+    profiles: ["seed"]
+    depends_on:
+      - vote
+    restart: "no"
+
+    

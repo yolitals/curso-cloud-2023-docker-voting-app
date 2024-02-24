@@ -14,19 +14,79 @@
 
 La aplicación de votación sólo acepta un voto por navegador del cliente. No registra votos adicionales si ya se ha enviado un voto de un cliente.
 
-## Ejercicio
+## Workshop parte 1
 
-### Parte 1
+### Construir imagen result
 
-* Basado en el diagrama de arquitectura, crear un docker compose para orquestar la aplicación con todos los servicios mencionados, tomar en cuenta las siguientes consideraciones:
+* Autenticarse a Docker hub, importante recordar cual es el id de usuario.
+* Revisar y comprender todas las instrucciones del archivo [Dockerfile](result/Dockerfile)
+* Construir la imagen para la aplicación *result*.
+
+```sh
+  # Movernos a la carpeta de result
+  cd result
+
+  # Contruir la imagen con el comando: docker build
+  sudo docker build -t [docker hub user]/result . 
+
+  # listar imagenes 
+  sudo docker images
+```
+
+### Construir imagen vote
+
+* Autenticarse a Docker hub, importante recordar cual es el id de usuario.
+* Revisar y comprender todas las instrucciones del archivo [Dockerfile](vote/Dockerfile)
+* Construir la imagen para la aplicación *result*.
+
+```sh
+  # Movernos a la carpeta de result
+  cd vote
+
+  # Contruir la imagen con el comando: docker build
+  sudo docker build -t [docker hub user]/vote . 
+
+  # listar imagenes 
+  sudo docker images
+```
+
+### Construir imagen worker
+
+* Autenticarse a Docker hub, importante recordar cual es el id de usuario.
+* Revisar y comprender todas las instrucciones del archivo [Dockerfile](worker/Dockerfile)
+* Construir la imagen para la aplicación *result*.
+
+```sh
+  # Movernos a la carpeta de result
+  cd worker
+
+  # Contruir la imagen con el comando: docker build
+  sudo docker build -t [docker hub user]/worker . 
+
+  # listar imagenes 
+  sudo docker images
+```
+
+## Workshop parte 2
+
+Evaluar el contenido del archivo [docker-compose.yml](docker-compose.yml)
+
+## Workshop parte 3
+
+* Explorar todos los objetos de Kubernetes ubicados en la carpeta [k8s-deployments](k8s-deployments)
+* Autenticarse al cluster
   
-  * Para redis utilizar una imagen publica (redis:alpine)
-  * Para mysql utilizar una imagen publica (postgres:15-alpine)
-  * La aplicación de python dentro del contenedor se ejecuta en el puerto 80.
-  * La aplicación de node dentro del contenedor se ejecuta en el purto 80.
-  * La aplicación para votar y la que muestra los resultados deben exponerse.
+```sh
+gcloud container clusters get-credentials sandbox-cluster-v1 --region us-central1 --project wwcode-terraform-admin
+```
 
-### Parte 2
+* Desplegar todos los objectos de kubernetes
 
-* Crear dos redes, una para frontend y otra para backend. Asignar estas redes según corresponda a cada servicio para garantizar la correcta comunicación entre todos los servicios y evitar accesos innecesarios.
-* Persisitir los datos o archivos que sean necesarios para preservar el conteo de votos.
+```sh
+# Movernos hacia la carpeta donde se encuentran los manifestos
+cd k8s-deployments 
+
+# Desplegar los objectos
+kubectl apply -f .
+
+```
