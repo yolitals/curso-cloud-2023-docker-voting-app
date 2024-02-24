@@ -18,6 +18,8 @@ La aplicación de votación sólo acepta un voto por navegador del cliente. No r
 
 ### Autenticarse a Docker hub
 
+Es importante contar con una cuenta en [Docker hub](https://hub.docker.com/), si no la tienes puedes crearla.
+
 * Autenticarse a Docker hub, importante recordar cual es el id de usuario.
 
 ```sh
