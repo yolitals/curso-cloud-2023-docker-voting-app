@@ -40,6 +40,9 @@ sudo docker login
 
   # listar imagenes 
   sudo docker images
+
+  # Publicar la image
+  sudo docker push [docker hub user]/result
 ```
 
 ### Construir imagen vote
@@ -56,6 +59,9 @@ sudo docker login
 
   # listar imagenes 
   sudo docker images
+
+    # Publicar la image
+  sudo docker push [docker hub user]/vote
 ```
 
 ### Construir imagen worker
@@ -72,6 +78,9 @@ sudo docker login
 
   # listar imagenes 
   sudo docker images
+
+    # Publicar la image
+  sudo docker push [docker hub user]/worker
 ```
 
 ## Workshop parte 2
