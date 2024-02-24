@@ -14,7 +14,7 @@ services:
     ports:
       - "80"
     deploy:
-      replicas: 3
+      replicas: 1
     
   result:
     image: yolix/vote-app-result
