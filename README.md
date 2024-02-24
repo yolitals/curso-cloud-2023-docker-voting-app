@@ -37,7 +37,7 @@ La aplicación de votación sólo acepta un voto por navegador del cliente. No r
 
 * Autenticarse a Docker hub, importante recordar cual es el id de usuario.
 * Revisar y comprender todas las instrucciones del archivo [Dockerfile](vote/Dockerfile)
-* Construir la imagen para la aplicación *result*.
+* Construir la imagen para la aplicación *vote*.
 
 ```sh
   # Movernos a la carpeta de result
@@ -54,7 +54,7 @@ La aplicación de votación sólo acepta un voto por navegador del cliente. No r
 
 * Autenticarse a Docker hub, importante recordar cual es el id de usuario.
 * Revisar y comprender todas las instrucciones del archivo [Dockerfile](worker/Dockerfile)
-* Construir la imagen para la aplicación *result*.
+* Construir la imagen para la aplicación *worker*.
 
 ```sh
   # Movernos a la carpeta de result
