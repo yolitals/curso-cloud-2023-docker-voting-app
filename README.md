@@ -84,6 +84,10 @@ Evaluar el contenido del archivo [docker-compose.yml](docker-compose.yml)
 * Autenticarse al cluster
   
 ```sh
+# Autenticarse a GCP
+gcloud auth login
+
+# Autenticarse al cluster
 gcloud container clusters get-credentials sandbox-cluster-v1 --region us-central1 --project wwcode-terraform-admin
 ```
 
