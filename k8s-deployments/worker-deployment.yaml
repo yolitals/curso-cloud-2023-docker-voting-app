@@ -15,5 +15,5 @@ spec:
         app: worker
     spec:
       containers:
-      - image: yolix/vote-app-worker
+      - image: dockersamples/examplevotingapp_worker
         name: worker
